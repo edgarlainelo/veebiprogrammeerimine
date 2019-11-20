@@ -10,7 +10,6 @@
 	  private $myNewImage;
 	  
 	  function __construct($picToUpload, $fileSizeLimit){
-		  echo "Klass töötab!";
 		  $this->error = null;//1 - pole pildifail, 2 - liiga suur, pole lubatud tüüp
 		  $this->picToUpload = $picToUpload;
 		  $this->fileSizeLimit = $fileSizeLimit;

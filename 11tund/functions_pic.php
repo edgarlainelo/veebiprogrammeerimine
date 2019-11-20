@@ -26,14 +26,14 @@ function showPics($privacy, $page, $limit){
 	$stmt->bind_result($fileNameFromDb, $altTextFromDb);
 	$stmt->execute();
 	while($stmt->fetch()){
-		//<img src="kataloog/pildifail" alt="tekst">
+		//<img src="kataloog/pildifail" alt="tekst" data-fn="pildifail">
 		$picHTML .= '<img src="' .$GLOBALS["pic_upload_dir_thumb"] .$fileNameFromDb .'" alt="';
 		if(empty($altTextFromDb)){
 			$picHTML .= "Illustreeriv foto";
 		} else {
 			$picHTML .= $altTextFromDb;
 		}
-		$picHTML .= '">' ."\n";
+		$picHTML .= '" data-fn="' .$fileNameFromDb .'">' ."\n";
 	}
 	if($picHTML == null){
 		$picHTML = "<p>Kahjuks pilte ei leitud!</p>";
